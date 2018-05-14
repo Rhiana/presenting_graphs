@@ -1,3 +1,16 @@
 // Place all the styles related to the BarGraphs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bar_graph {
+  svg {
+    height: 200px;
+    width: 90px;
+  }
+  rect {
+    fill: purple;
+  }
+  text {
+    fill: white;
+    text-anchor: middle;
+  }
+}

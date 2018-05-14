@@ -1,0 +1,15 @@
+<% percentage = (score / total.to_f) * 100 %>
+<% height     = percentage * 2 %>
+<% y_coord    = 200 - height %>
+<% text_coord = y_coord + 25 %>
+
+<svg viewBox='0 0 90 200'>
+  <rect width="90"
+        height="<%= height %>"
+        y="<%= y_coord %>"
+  />
+
+  <text x="45" y="<%= text_coord %>">
+    <%= percentage.to_i %>%
+  </text>
+</svg>

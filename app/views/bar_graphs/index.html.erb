@@ -2,28 +2,16 @@
 
 <h1>Bar Graphs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Score</th>
-      <th>Total</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bar_graphs.each do |bar_graph| %>
-      <tr>
-        <td><%= bar_graph.score %></td>
-        <td><%= bar_graph.total %></td>
-        <td><%= link_to 'Show', bar_graph %></td>
-        <td><%= link_to 'Edit', edit_bar_graph_path(bar_graph) %></td>
-        <td><%= link_to 'Destroy', bar_graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% @bar_graphs.each do |bar_graph| %>
+  <div class="bar_graph">
+    <%= render "bar_graph_svg",
+              total: bar_graph.total,
+              score: bar_graph.score
+    %>
+  </div>
+  <%= link_to 'Show', bar_graph %>
+  <%= link_to 'Edit', edit_bar_graph_path(bar_graph) %>
+  <%= link_to 'Destroy', bar_graph, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <br>
-
 <%= link_to 'New Bar Graph', new_bar_graph_path %>

@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div class="bar_graph">
+  <%= render "bar_graph_svg",
+            total: @bar_graph.total,
+            score: @bar_graph.score
+  %>
+</div>
+
 <p>
   <strong>Score:</strong>
   <%= @bar_graph.score %>
