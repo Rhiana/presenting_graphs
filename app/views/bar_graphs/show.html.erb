@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @bar_graph.score %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @bar_graph.total %>
+</p>
+
+<%= link_to 'Edit', edit_bar_graph_path(@bar_graph) %> |
+<%= link_to 'Back', bar_graphs_path %>

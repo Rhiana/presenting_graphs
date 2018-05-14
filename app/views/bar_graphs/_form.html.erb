@@ -1,0 +1,27 @@
+<%= form_with(model: bar_graph, local: true) do |form| %>
+  <% if bar_graph.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bar_graph.errors.count, "error") %> prohibited this bar_graph from being saved:</h2>
+
+      <ul>
+      <% bar_graph.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.number_field :score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.number_field :total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

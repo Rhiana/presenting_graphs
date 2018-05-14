@@ -1,0 +1,2 @@
+class BarGraph < ApplicationRecord
+end
