@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @circle_graph.score %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @circle_graph.total %>
+</p>
+
+<%= link_to 'Edit', edit_circle_graph_path(@circle_graph) %> |
+<%= link_to 'Back', circle_graphs_path %>

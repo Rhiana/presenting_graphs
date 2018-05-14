@@ -1,0 +1,2 @@
+class CircleGraph < ApplicationRecord
+end
