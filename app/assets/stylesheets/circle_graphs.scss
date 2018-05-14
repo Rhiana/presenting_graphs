@@ -1,3 +1,20 @@
 // Place all the styles related to the CircleGraphs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.circle_graph {
+  svg {
+    height: 150px;
+    width: 150px;
+  }
+  circle, path {
+    fill: none;
+    stroke-width: 1;
+  }
+  circle {
+    stroke: #c1c1c1;
+  }
+  path {
+    stroke: purple;
+  }
+}
