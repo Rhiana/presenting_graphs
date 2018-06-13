@@ -1,5 +1,15 @@
-<h1>New Bar Graph</h1>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>New Bar Graph</h1>
+    </header>
 
-<%= render 'form', bar_graph: @bar_graph %>
+    <div class="page__form">
+      <%= render 'form', bar_graph: @bar_graph %>
+    </div>
 
-<%= link_to 'Back', bar_graphs_path %>
+    <nav class="page__cta">
+      <%= link_to 'Back', bar_graphs_path, class: "button pink" %>
+    </nav>
+  </article>
+</section>

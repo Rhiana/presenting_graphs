@@ -1,6 +1,22 @@
-<h1>Editing Bar Graph</h1>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Editing Bar Graph</h1>
+    </header>
 
-<%= render 'form', bar_graph: @bar_graph %>
+    <div class="page__form">
+      <div class="bar_graph">
+        <%= render "bar_graph_svg",
+                  total: @bar_graph.total,
+                  score: @bar_graph.score
+        %>
+      </div>
+      <%= render 'form', bar_graph: @bar_graph %>
+    </div>
 
-<%= link_to 'Show', @bar_graph %> |
-<%= link_to 'Back', bar_graphs_path %>
+    <nav class="page__cta">
+      <%= link_to 'Back', bar_graphs_path, class: "button pink" %>
+      <%= link_to 'Destroy', @bar_graph, class: "button blue", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </article>
+</section>
