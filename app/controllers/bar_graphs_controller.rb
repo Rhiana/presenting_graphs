@@ -28,7 +28,7 @@ class BarGraphsController < ApplicationController
 
     respond_to do |format|
       if @bar_graph.save
-        format.html { redirect_to action: "index", notice: 'Bar graph was successfully created.' }
+        format.html { redirect_to bar_graphs_url, notice: 'Bar graph was successfully created.' }
         format.json { render :index, status: :created, location: @bar_graph }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BarGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @bar_graph.update(bar_graph_params)
-        format.html { redirect_to action: "index", notice: 'Bar graph was successfully updated.' }
+        format.html { redirect_to bar_graphs_url, notice: 'Bar graph was successfully updated.' }
         format.json { render :index, status: :ok, location: @bar_graph }
       else
         format.html { render :edit }

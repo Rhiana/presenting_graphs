@@ -28,7 +28,7 @@ class CircleGraphsController < ApplicationController
 
     respond_to do |format|
       if @circle_graph.save
-        format.html { redirect_to action: "index", notice: 'Circle graph was successfully created.' }
+        format.html { redirect_to circle_graphs_url, notice: 'Circle graph was successfully created.' }
         format.json { render :index, status: :created, location: @circle_graph }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CircleGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @circle_graph.update(circle_graph_params)
-        format.html { redirect_to action: "index", notice: 'Circle graph was successfully updated.' }
+        format.html { redirect_to circle_graphs_url, notice: 'Circle graph was successfully updated.' }
         format.json { render :index, status: :ok, location: @circle_graph }
       else
         format.html { render :edit }
