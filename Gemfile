@@ -11,6 +11,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'autoprefixer-rails'
   gem 'rails_real_favicon'
 end
 
