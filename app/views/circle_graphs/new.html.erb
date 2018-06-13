@@ -1,5 +1,15 @@
-<h1>New Circle Graph</h1>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>New Circle Graph</h1>
+    </header>
 
-<%= render 'form', circle_graph: @circle_graph %>
+    <div class="page__form">
+      <%= render 'form', circle_graph: @circle_graph %>
+    </div>
 
-<%= link_to 'Back', circle_graphs_path %>
+    <nav class="page__cta">
+      <%= link_to 'Back', circle_graphs_path, class: "button pink" %>
+    </nav>
+  </article>
+</section>

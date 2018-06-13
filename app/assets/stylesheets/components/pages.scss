@@ -12,6 +12,17 @@
     border-bottom: 2px solid $white;
     margin-bottom: 20px;
   }
+  &__cta {
+    margin: 15px 0;
+    .button {
+      margin-right: 10px;
+      @include mobile {
+        margin-right: 0px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+  }
   &__preview {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -37,6 +48,17 @@
           stroke: $white;
         }
       }
+    }
+  }
+  &__form {
+    background-color: $white;
+    border-radius: 5px;
+    border: 2px solid $purple;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    .circle_graph {
+      text-align: center;
     }
   }
 }

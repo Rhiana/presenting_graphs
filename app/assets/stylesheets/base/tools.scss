@@ -5,3 +5,17 @@ $mobile-breakpoint:  768px; // 640px48em
     @content;
   }
 }
+
+
+@mixin button-background($colour) {
+  background-color: $colour;
+  transition: background-color 0.3s;
+  &:hover, &:focus {
+    background-color: darken($colour, 15%);
+    color: $button-foreground;
+    text-decoration: none;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}

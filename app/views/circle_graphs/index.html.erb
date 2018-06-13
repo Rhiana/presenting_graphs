@@ -1,18 +1,29 @@
 <p id="notice"><%= notice %></p>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Circle Graphs</h1>
+      <p><strong>
+        Here are some basic SVG circle graphs where it's filling in a percentage
 
-<h1>Circle Graphs</h1>
-
-<% @circle_graphs.each do |circle_graph| %>
-  <div class="circle_graph">
-    <%= render "circle_graph_svg",
-              total: circle_graph.total,
-              score: circle_graph.score
-    %>
-  </div>
-
-  <%= link_to 'Show', circle_graph %>
-  <%= link_to 'Edit', edit_circle_graph_path(circle_graph) %>
-  <%= link_to 'Destroy', circle_graph, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<br>
-<%= link_to 'New Circle Graph', new_circle_graph_path %>
+      </strong></p>
+    </header>
+    <nav class="page__preview">
+    <% @circle_graphs.each do |circle_graph| %>
+      <%= link_to edit_circle_graph_path(circle_graph), class: "preview_link" do %>
+        <div class="circle_graph">
+          <%= render "circle_graph_svg",
+                    total: circle_graph.total,
+                    score: circle_graph.score
+          %>
+        </div>
+        <span>Update</span>
+      <% end %>
+    <% end %>
+    </nav>
+    <div class="page__cta">
+      <%= link_to 'New Circle Graph', new_circle_graph_path, class: "button purple" %>
+      <%= link_to 'Other Graphs', root_path, class: "button pink" %>
+    </div>
+  </article>
+</section>

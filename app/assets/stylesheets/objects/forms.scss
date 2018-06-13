@@ -1,0 +1,39 @@
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  min-height: 39px;
+  line-height: 39px;
+  font-size: 16px;
+  border: 2px solid $input-border;
+  border-radius: 3px;
+  padding-left: 1rem;
+  color: $input-text;
+  &::placeholder {
+    color: $input-placeholder;
+  }
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 15px;
+  align-items: center;
+  margin: 15px 0;
+  label {
+    font-weight: bold;
+    text-align: right;
+    @include mobile {
+      text-align: left;
+    }
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.actions {
+  text-align: right;
+  @include mobile {
+    text-align: left;
+  }
+}

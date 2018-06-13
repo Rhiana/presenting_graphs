@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :score %>
+    <%= form.label :score, placeholder: "Enter a score" %>
     <%= form.number_field :score %>
   </div>
 
   <div class="field">
-    <%= form.label :total %>
+    <%= form.label :total, placeholder: "Enter a total" %>
     <%= form.number_field :total %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button purple" %>
   </div>
 <% end %>

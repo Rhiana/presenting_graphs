@@ -1,6 +1,22 @@
-<h1>Editing Circle Graph</h1>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Editing Circle Graph</h1>
+    </header>
 
-<%= render 'form', circle_graph: @circle_graph %>
+    <div class="page__form">
+      <div class="circle_graph">
+        <%= render "circle_graph_svg",
+                  total: @circle_graph.total,
+                  score: @circle_graph.score
+        %>
+      </div>
+      <%= render 'form', circle_graph: @circle_graph %>
+    </div>
 
-<%= link_to 'Show', @circle_graph %> |
-<%= link_to 'Back', circle_graphs_path %>
+    <nav class="page__cta">
+      <%= link_to 'Back', circle_graphs_path, class: "button pink" %>
+      <%= link_to 'Destroy', @circle_graph, class: "button blue", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </article>
+</section>
