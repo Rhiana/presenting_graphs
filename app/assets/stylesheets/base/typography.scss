@@ -1,0 +1,48 @@
+h1 {
+  font-family: $title-font;
+  font-size: 48px;
+  color: inherit;
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: $title-font;
+  font-size: 36px;
+  color: inherit;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: $title-font;
+  font-size: 24px;
+  color: inherit;
+  line-height: 1.2;
+}
+
+strong {
+  font-weight: bold;
+  font-size: inherit;
+  color: inherit;
+  line-height: 1.2;
+}
+
+p, a, ul li, ol li, span {
+  font-size: 16px;
+  line-height: 1.2;
+  color: inherit;
+}
+
+a {
+  color: $text-link;
+  text-decoration: underline;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+sub, sup, small {
+  font-size: 80%;
+}
+
+::-moz-selection { background: $light-pink; }
+::selection { background: $light-pink; }

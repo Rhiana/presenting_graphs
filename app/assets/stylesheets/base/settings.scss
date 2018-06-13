@@ -1,0 +1,33 @@
+// Global variables, brand colours, etc
+$body-font:   'Raleway', sans-serif;
+$title-font:  'Sunflower', sans-serif;
+
+// Colours
+$purple:            #A42CD6;
+$deep-purple:       #470063;
+$pink:              #D90368;
+$light-pink:        #F092DD;
+$deep-blue:         #2B1D59;
+
+// Shades
+$white:             #FFFFFF;
+$pink-white:        #F6EBFB;
+$light-grey:        #E7E8E9;
+$mid-grey:          #A9A9A9;
+$grey:              #9B9B9B;
+$dark-grey:         #4A4A4A;
+$black:             #272727;
+
+
+// Theme and page variables
+$body-background:         $pink-white;
+$body-foreground:         $black;
+$text-link:               $purple;
+
+$input-text:              $dark-grey;
+$input-placeholder:       $grey;
+$input-border:            $light-grey;
+
+$button-foreground:       $white;
+$button-purple:           $purple;
+$button-disabled:         $mid-grey;
