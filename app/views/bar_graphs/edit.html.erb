@@ -6,10 +6,7 @@
 
     <div class="page__form">
       <div class="bar_graph">
-        <%= render "bar_graph_svg",
-                  total: @bar_graph.total,
-                  score: @bar_graph.score
-        %>
+        <%= BarPresenter.new(self, @bar_graph.score, @bar_graph.total, 200, 90).render %>
       </div>
       <%= render 'form', bar_graph: @bar_graph %>
     </div>

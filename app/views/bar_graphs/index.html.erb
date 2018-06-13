@@ -16,10 +16,7 @@
     <% @bar_graphs.each do |bar_graph| %>
       <%= link_to edit_bar_graph_path(bar_graph), class: "preview_link" do %>
         <div class="bar_graph">
-          <%= render "bar_graph_svg",
-                    total: bar_graph.total,
-                    score: bar_graph.score
-          %>
+          <%= BarPresenter.new(self, bar_graph.score, bar_graph.total, 200, 90).render %>
         </div>
         <span>Update</span>
       <% end %>

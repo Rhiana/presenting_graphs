@@ -1,15 +1,16 @@
-<% percentage = (score / total.to_f) * 100 %>
-<% height     = percentage * 2 %>
-<% y_coord    = 200 - height %>
-<% text_coord = y_coord + 25 %>
+<svg style="height:<%= graph.height %>px;width:<%= graph.width %>px;"
+     version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graph" aria-labelledby="title" role="img"
+     viewBox="0 0 <%= graph.width %> <%= graph.height %>"  preserveAspectRatio="none">
+  <title class="title">
+    A bar chart showing your Results
+  </title>
 
-<svg viewBox='0 0 90 200'>
-  <rect width="90"
-        height="<%= height %>"
-        y="<%= y_coord %>"
+  <rect width="<%= graph.width %>"
+        height="<%= graph.fill %>"
+        y="<%= graph.y_coord %>"
   />
 
-  <text x="45" y="<%= text_coord %>">
-    <%= percentage.to_i %>%
+  <text x="<%= graph.x_text_coord %>" y="<%= graph.y_text_coord %>">
+    <%= graph.percentage.to_i %>%
   </text>
 </svg>

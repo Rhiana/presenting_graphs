@@ -19,10 +19,7 @@
       <% end %>
       <%= link_to bar_graphs_path, class: "preview_link" do %>
         <div class="bar_graph">
-          <%= render "bar_graphs/bar_graph_svg",
-                    total: 100,
-                    score: 73
-          %>
+          <%= BarPresenter.new(self, 73, 100, 200, 90).render %>
         </div>
         <span>Bar Graphs</span>
       <% end %>
