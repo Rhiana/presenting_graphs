@@ -9,12 +9,13 @@
   }
   circle, path {
     fill: none;
-    stroke-width: 1;
+    stroke-width: 4;
+    stroke-linecap: round;
   }
   circle {
-    stroke: #c1c1c1;
+    stroke: $mid-grey;
   }
   path {
-    stroke: purple;
+    stroke: $deep-purple;
   }
 }
