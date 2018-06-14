@@ -10,10 +10,7 @@
     <nav class="page__preview">
       <%= link_to circle_graphs_path, class: "preview_link" do %>
         <div class="circle_graph">
-          <%= render "circle_graphs/circle_graph_svg",
-                    total: 100,
-                    score: 27
-          %>
+          <%= CirclePresenter.new(self, 27, 100, 200).render %>
         </div>
         <span>Circle Graphs</span>
       <% end %>

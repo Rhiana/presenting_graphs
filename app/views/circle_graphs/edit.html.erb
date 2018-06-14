@@ -6,10 +6,7 @@
 
     <div class="page__form">
       <div class="circle_graph">
-        <%= render "circle_graph_svg",
-                  total: @circle_graph.total,
-                  score: @circle_graph.score
-        %>
+        <%= CirclePresenter.new(self, @circle_graph.score, @circle_graph.total, 200).render %>
       </div>
       <%= render 'form', circle_graph: @circle_graph %>
     </div>

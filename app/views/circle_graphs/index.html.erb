@@ -15,10 +15,7 @@
     <% @circle_graphs.each do |circle_graph| %>
       <%= link_to edit_circle_graph_path(circle_graph), class: "preview_link" do %>
         <div class="circle_graph">
-          <%= render "circle_graph_svg",
-                    total: circle_graph.total,
-                    score: circle_graph.score
-          %>
+          <%= CirclePresenter.new(self, circle_graph.score, circle_graph.total, 180).render %>
         </div>
         <span>Update</span>
       <% end %>
