@@ -1,9 +1,21 @@
-#notice {
+#notice,
+#error_explanation {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   background-color: $pink;
   color: $white;
   padding: 10px;
   text-align: center;
+  h2 {
+    font-size: 18px;
+  }
+}
+
+.field_with_errors {
+  input {
+    background-color: rgba($light-pink, 0.2);
+    border-color: $light-pink;
+  }
 }

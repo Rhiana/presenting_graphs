@@ -1,6 +1,6 @@
 <%= form_with(model: circle_graph, local: true) do |form| %>
   <% if circle_graph.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" role="alert">
       <h2><%= pluralize(circle_graph.errors.count, "error") %> prohibited this circle_graph from being saved:</h2>
 
       <ul>

@@ -20,6 +20,8 @@ input[type="number"] {
   align-items: center;
   margin: 15px 0;
   label {
+    display: inline-block;
+    width: 100%;
     font-weight: bold;
     text-align: right;
     @include mobile {

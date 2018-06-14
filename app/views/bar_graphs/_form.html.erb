@@ -1,6 +1,6 @@
 <%= form_with(model: bar_graph, local: true) do |form| %>
   <% if bar_graph.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" role="alert">
       <h2><%= pluralize(bar_graph.errors.count, "error") %> prohibited this bar_graph from being saved:</h2>
 
       <ul>
