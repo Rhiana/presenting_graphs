@@ -1,4 +1,5 @@
 class BarPresenter
+  require 'color-generator'
   attr_reader :score, :total, :height, :width
 
   def initialize(view, score, total, height, width)
@@ -21,6 +22,11 @@ class BarPresenter
 
   def fill
     (score / total.to_f) * height
+  end
+
+  def color
+    generator = ColorGenerator.new saturation: 0.3, value: 0.5
+    generator.create_hex
   end
 
   def y_coord

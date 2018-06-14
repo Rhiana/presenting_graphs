@@ -1,4 +1,5 @@
 class CirclePresenter
+  require 'color-generator'
   attr_reader :score, :total, :size
 
   def initialize(view, score, total, size)
@@ -12,6 +13,11 @@ class CirclePresenter
     # Renders the circle_graphs/_circle_graph_svg.html.erb partial,
     # passing in this presenter as a `graph` variable
     @view.render("circle_graphs/circle_graph_svg", graph: self)
+  end
+
+  def color
+    generator = ColorGenerator.new saturation: 0.5, value: 1.0
+    generator.create_hex
   end
 
   def percentage

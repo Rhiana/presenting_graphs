@@ -5,7 +5,7 @@
     A circle chart showing your Results
   </title>
 
-  <text x="<%= graph.center %>" y="<%= graph.center + 10 %>" 
+  <text x="<%= graph.center %>" y="<%= graph.center + 10 %>"
         font-size="30px" text-anchor="middle" fill="#C1C1C1">
     <%= graph.percentage.to_i %>%
   </text>
@@ -17,7 +17,7 @@
       A <%= graph.radius %> <%= graph.radius %> 0 0 1 <%= graph.arc_end_rhs %>
       A <%= graph.radius %> <%= graph.radius %> 0 0 1 <%= graph.arc_end_lhs %>"
     fill="none"
-    stroke="#470063"
+    stroke="#<%= graph.color %>"
     stroke-dasharray="<%= graph.percentage_adj %>, <%= graph.circumference %>"
   />
 </svg>

@@ -12,6 +12,7 @@ end
 
 group :development do
   gem 'autoprefixer-rails'
+  gem 'color-generator'
   gem 'rails_real_favicon'
 end
 

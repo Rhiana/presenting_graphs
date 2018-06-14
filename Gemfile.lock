@@ -73,6 +73,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    color-generator (0.0.4)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     domain_name (0.5.20180417)
@@ -222,6 +223,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  color-generator
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg
