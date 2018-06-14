@@ -12,7 +12,6 @@ end
 
 group :development do
   gem 'autoprefixer-rails'
-  gem 'color-generator'
   gem 'rails_real_favicon'
 end
 
@@ -38,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+gem 'color-generator'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -65,6 +66,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
+  gem 'rspec-rails', '~> 3.7.2'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
