@@ -9,6 +9,14 @@
         font-size="30px" text-anchor="middle" fill="#C1C1C1">
     <%= graph.percentage.to_i %>%
   </text>
+  <text x="10" y="<%= graph.center + 10 %>"
+        font-size="10px" text-anchor="middle" fill="#C1C1C1">
+    0
+  </text>
+  <text x="<%= graph.size - 10.0 %>" y="<%= graph.center + 10 %>"
+        font-size="10px" text-anchor="middle" fill="#C1C1C1">
+    <%= graph.total %>
+  </text>
   <path
     class="score_path"
     d="M<%= graph.arc_start %>

@@ -21,7 +21,7 @@ class GaugePresenter
   end
 
   def height
-    size / 2.0
+    (size / 2.0) + 15.0
   end
 
   def percentage
