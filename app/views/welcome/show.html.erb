@@ -8,17 +8,23 @@
       </strong></p>
     </header>
     <nav class="page__preview">
+      <%= link_to bar_graphs_path, class: "preview_link" do %>
+        <div class="bar_graph">
+          <%= BarPresenter.new(self, 73, 100, 200, 90).render %>
+        </div>
+        <span>Bar Graphs</span>
+      <% end %>
       <%= link_to circle_graphs_path, class: "preview_link" do %>
         <div class="circle_graph">
           <%= CirclePresenter.new(self, 27, 100, 200).render %>
         </div>
         <span>Circle Graphs</span>
       <% end %>
-      <%= link_to bar_graphs_path, class: "preview_link" do %>
-        <div class="bar_graph">
-          <%= BarPresenter.new(self, 73, 100, 200, 90).render %>
+      <%= link_to gauge_graphs_path, class: "preview_link" do %>
+        <div class="gauge_graph">
+
         </div>
-        <span>Bar Graphs</span>
+        <span>Gauge Graphs</span>
       <% end %>
       <%= link_to line_graphs_path, class: "preview_link" do %>
         <div class="line_graph">

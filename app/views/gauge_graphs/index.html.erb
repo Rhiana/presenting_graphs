@@ -1,0 +1,30 @@
+<% content_for :title, " - All gauge graphs" %>
+
+<% if notice %>
+  <p id="notice" role="alert"><%= notice %></p>
+<% end %>
+
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Gauge Graphs</h1>
+      <p><strong>
+        Here are some basic SVG gauge graphs where it's filling in a percentage
+      </strong></p>
+    </header>
+    <nav class="page__preview">
+    <% @gauge_graphs.each do |gauge_graph| %>
+      <%= link_to edit_gauge_graph_path(gauge_graph), class: "preview_link" do %>
+        <div class="gauge_graph">
+
+        </div>
+        <span>Update</span>
+      <% end %>
+    <% end %>
+    </nav>
+    <div class="page__cta">
+      <%= link_to 'New Gauge Graph', new_gauge_graph_path, class: "button purple" %>
+      <%= link_to 'Other Graphs', root_path, class: "button pink" %>
+    </div>
+  </article>
+</section>
