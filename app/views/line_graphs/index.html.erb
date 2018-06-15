@@ -16,7 +16,7 @@
       <% @line_graphs.each do |line_graph| %>
         <%= link_to edit_line_graph_path(line_graph), class: "preview_link" do %>
           <div class="line_graph">
-
+            <%= LinePresenter.new(self, line_graph.score1, line_graph.score2, line_graph.score3, 180).render %>
           </div>
           <span>Update</span>
         <% end %>
