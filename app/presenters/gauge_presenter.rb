@@ -44,6 +44,10 @@ class GaugePresenter
     (score / total.to_f) * semi_circle
   end
 
+  def offset
+    percentage_adj - semi_circle
+  end
+
   def radians(degrees)
     degrees * Math::PI / 180
   end
