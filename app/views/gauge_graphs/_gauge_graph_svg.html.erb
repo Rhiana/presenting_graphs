@@ -1,0 +1,27 @@
+<svg style="height:<%= graph.height %>px;width:<%= graph.size %>px;"
+     version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graph" aria-labelledby="title" role="img"
+     viewBox="0 0 <%= graph.size %> <%= graph.height %>"  preserveAspectRatio="none">
+  <title class="title">
+    A guage chart showing your Results
+  </title>
+
+  <text x="<%= graph.center %>" y="<%= graph.center - 5 %>"
+        font-size="30px" text-anchor="middle" fill="#C1C1C1">
+    <%= graph.percentage.to_i %>%
+  </text>
+  <path
+    class="score_path"
+    d="M<%= graph.arc_start %>
+      A <%= graph.radius %> <%= graph.radius %> 0 0 0 <%= graph.arc_end %>"
+    fill="none"
+    stroke="#C1C1C1"
+  />
+  <path
+    class="score_path"
+    d="M<%= graph.arc_start %>
+      A <%= graph.radius %> <%= graph.radius %> 0 0 0 <%= graph.arc_end %>"
+    fill="none"
+    stroke="#<%= graph.color %>"
+    stroke-dasharray="<%= graph.percentage_adj %>, <%= graph.semi_circle %>"
+  />
+</svg>

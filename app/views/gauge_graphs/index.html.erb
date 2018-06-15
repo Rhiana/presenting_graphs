@@ -16,7 +16,7 @@
     <% @gauge_graphs.each do |gauge_graph| %>
       <%= link_to edit_gauge_graph_path(gauge_graph), class: "preview_link" do %>
         <div class="gauge_graph">
-
+          <%= GaugePresenter.new(self, gauge_graph.score, gauge_graph.total, 180).render %>
         </div>
         <span>Update</span>
       <% end %>

@@ -6,7 +6,7 @@
 
     <div class="page__form">
       <div class="gauge_graph">
-
+        <%= GaugePresenter.new(self, @gauge_graph.score_was, @gauge_graph.total_was, 180).render %>
       </div>
       <%= render 'form', gauge_graph: @gauge_graph %>
     </div>

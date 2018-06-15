@@ -22,7 +22,7 @@
       <% end %>
       <%= link_to gauge_graphs_path, class: "preview_link" do %>
         <div class="gauge_graph">
-
+          <%= GaugePresenter.new(self, 65, 100, 180).render %>
         </div>
         <span>Gauge Graphs</span>
       <% end %>
