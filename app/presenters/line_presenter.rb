@@ -17,6 +17,11 @@ class LinePresenter
     @view.render("line_graphs/line_graph_svg", graph: self)
   end
 
+  def color
+    generator = ColorGenerator.new saturation: 0.5, value: 1.0
+    generator.create_hex
+  end
+
   def tag
     @view.tag
   end
@@ -92,6 +97,38 @@ class LinePresenter
     Y_SCALE.each_with_index.map do |scale, index|
       tag.text scale, x: xcord(-0.2), y: ycord(index) + 5
     end.join.html_safe
+  end
+
+  # Puts the data points on the grid
+  def data_points
+    scores.each_with_index.map do |score, index|
+      tag.circle  cx: xcord(index),
+                  cy: score_cord(score),
+                  r: "5",
+                  fill: "##{color}",
+                  data: {
+                    value: score
+                  }
+    end.join.html_safe
+  end
+
+  def scores_points(prefix = "")
+    scores.each_with_index.map do |score, index|
+      "#{prefix}#{xcord(index)},#{score_cord(score)}"
+    end.join(" ")
+  end
+
+  def data_line
+    tag.polyline points: scores_points, stroke: "##{color}"
+  end
+
+  def area_under_line
+    bottom_left   = "M#{left_border},#{bottom_border}"
+    bottom_right  = "L#{right_border},#{bottom_border}Z"
+    points_line   = scores_points("L")
+
+    tag.path d: "#{bottom_left} #{points_line} #{bottom_right}",
+             fill: "##{color}"
   end
 
 end
