@@ -6,14 +6,16 @@ RSpec.describe BarGraph, type: :model do
       build(:bar_graph)
     end
 
-    it "has a score and total" do
-      is_expected.to validate_presence_of(:score)
-      is_expected.to validate_presence_of(:total)
+    it "has two scores" do
+      is_expected.to validate_presence_of(:score1)
+      is_expected.to validate_presence_of(:score2)
     end
 
-    it "has a score and total which are numbers" do
-      is_expected.to validate_numericality_of(:score)
-      is_expected.to validate_numericality_of(:total)
+    it "has two scores which are numbers from 0 to 50" do
+      should validate_numericality_of(:score1).
+                 is_less_than_or_equal_to(50)
+      should validate_numericality_of(:score2).
+                 is_less_than_or_equal_to(50)
     end
   end
 end

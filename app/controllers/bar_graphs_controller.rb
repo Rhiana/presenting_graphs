@@ -69,6 +69,6 @@ class BarGraphsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bar_graph_params
-      params.require(:bar_graph).permit(:score, :total)
+      params.require(:bar_graph).permit(:score1, :score2)
     end
 end

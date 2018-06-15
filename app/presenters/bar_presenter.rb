@@ -1,11 +1,10 @@
 class BarPresenter
   require 'color-generator'
-  attr_reader :score, :total, :height, :width
+  attr_reader :score, :height, :width
 
-  def initialize(view, score, total, height, width)
+  def initialize(view, score, height, width)
     @view     = view
     @score    = score
-    @total    = total
     @height   = height
     @width    = width
   end
@@ -14,6 +13,10 @@ class BarPresenter
     # Renders the bar_graphs/_bar_graph_svg.html.erb partial,
     # passing in this presenter as a `graph` variable
     @view.render("bar_graphs/bar_graph_svg", graph: self)
+  end
+
+  def total
+    50
   end
 
   def percentage

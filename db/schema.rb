@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_052127) do
+ActiveRecord::Schema.define(version: 2018_06_15_063741) do
 
   create_table "bar_graphs", force: :cascade do |t|
-    t.integer "score"
-    t.integer "total"
+    t.integer "score1"
+    t.integer "score2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

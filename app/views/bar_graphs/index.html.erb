@@ -18,7 +18,8 @@
     <% @bar_graphs.each do |bar_graph| %>
       <%= link_to edit_bar_graph_path(bar_graph), class: "preview_link" do %>
         <div class="bar_graph">
-          <%= BarPresenter.new(self, bar_graph.score, bar_graph.total, 200, 90).render %>
+          <%= BarPresenter.new(self, bar_graph.score1, 200, 90).render %>
+          <%= BarPresenter.new(self, bar_graph.score2, 200, 90).render %>
         </div>
         <span>Update</span>
       <% end %>
