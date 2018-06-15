@@ -1,3 +1,11 @@
-// Place all the styles related to the LineGraphs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.line_graph {
+  .grid {
+    stroke: $grey;
+    stroke-dasharray: 1 2;
+    stroke-width: 1;
+  }
+  .labels.y-labels {
+    font-size: 10px;
+    text-anchor: middle;
+  }
+}
