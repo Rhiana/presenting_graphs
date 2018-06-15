@@ -1,0 +1,15 @@
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>New Line Graph</h1>
+    </header>
+
+    <div class="page__form">
+      <%= render 'form', line_graph: @line_graph %>
+    </div>
+
+    <nav class="page__cta">
+      <%= link_to 'Back', line_graphs_path, class: "button pink" %>
+    </nav>
+  </article>
+</section>

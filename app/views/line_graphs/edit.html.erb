@@ -1,0 +1,16 @@
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Editing Line Graph</h1>
+    </header>
+
+    <div class="page__form">
+      <%= render 'form', line_graph: @line_graph %>
+    </div>
+
+    <nav class="page__cta">
+      <%= link_to 'Back', line_graphs_path, class: "button pink" %>
+      <%= link_to 'Destroy', @line_graph, class: "button blue", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+  </article>
+</section>

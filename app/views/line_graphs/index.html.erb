@@ -1,0 +1,31 @@
+<% content_for :title, " - All line graphs" %>
+
+<% if notice %>
+  <p id="notice" role="alert"><%= notice %></p>
+<% end %>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Line Graphs</h1>
+      <p><strong>
+        Here are some basic SVG circle graphs where it's filling in a percentage
+
+      </strong></p>
+    </header>
+    <nav class="page__preview">
+      <% @line_graphs.each do |line_graph| %>
+        <%= link_to edit_line_graph_path(line_graph), class: "preview_link" do %>
+          <div class="line_graph">
+
+          </div>
+          <span>Update</span>
+        <% end %>
+      <% end %>
+    </nav>
+
+    <div class="page__cta">
+      <%= link_to 'New Line Graph', new_line_graph_path, class: "button purple" %>
+      <%= link_to 'Other Graphs', root_path, class: "button pink" %>
+    </div>
+  </article>
+</section>
