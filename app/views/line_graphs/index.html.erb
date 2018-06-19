@@ -26,5 +26,7 @@
       <%= link_to 'New Line Graph', new_line_graph_path, class: "button purple" %>
       <%= link_to 'Other Graphs', root_path, class: "button pink" %>
     </div>
+
+    <%= render "shared/code_snippet", graph: "line" %>
   </article>
 </section>

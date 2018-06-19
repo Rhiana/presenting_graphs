@@ -29,5 +29,7 @@
       <%= link_to 'New Bar Graph', new_bar_graph_path, class: "button purple" %>
       <%= link_to 'Other Graphs', root_path, class: "button pink" %>
     </div>
+
+    <%= render "shared/code_snippet", graph: "bar" %>
   </article>
 </section>

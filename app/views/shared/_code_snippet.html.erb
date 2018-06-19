@@ -1,0 +1,21 @@
+<div class="page__code">
+  <header class="page__header">
+    <h2>Code examples</h2>
+    <p><strong>
+      Here is the front end SVG code for this <%= graph %> graph
+    </strong></p>
+  </header>
+  <pre>
+<%= File.read Rails.root.join "app/views/#{graph}_graphs/_#{graph}_graph_svg.html.erb" %>
+  </pre>
+</div>
+<div class="page__code">
+  <header class="page__header">
+    <p><strong>
+      Here is the back end Ruby code for this <%= graph %> graph
+    </strong></p>
+  </header>
+  <pre>
+<%= File.read Rails.root.join "app/presenters/#{graph}_presenter.rb" %>
+  </pre>
+</div>

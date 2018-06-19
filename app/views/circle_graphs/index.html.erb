@@ -27,5 +27,7 @@
       <%= link_to 'New Circle Graph', new_circle_graph_path, class: "button purple" %>
       <%= link_to 'Other Graphs', root_path, class: "button pink" %>
     </div>
+
+    <%= render "shared/code_snippet", graph: "circle" %>
   </article>
 </section>

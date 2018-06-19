@@ -1,5 +1,9 @@
 .page {
   padding-top: 100px;
+  color: $body-foreground;
+  @include mobile {
+    padding-top: 30px;
+  }
   &__content {
     width: 85%;
     max-width: 1200px;
@@ -63,6 +67,13 @@
     .line_graph,
     .gauge_graph {
       text-align: center;
+    }
+  }
+  &__code {
+    margin: 30px 0;
+    pre {
+      background-color: $light-grey;
+      padding: 10px;
     }
   }
 }
