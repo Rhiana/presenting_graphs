@@ -15,7 +15,7 @@
       <% @pie_graphs.each do |pie_graph| %>
         <%= link_to edit_pie_graph_path(pie_graph), class: "preview_link" do %>
         <div class="pie_graph">
-
+          <%= PiePresenter.new(self, pie_graph.score1, pie_graph.score2, pie_graph.score3, 180).render %>
         </div>
         <span>Update</span>
         <% end %>
@@ -26,6 +26,8 @@
       <%= link_to 'New Pie Graph', new_pie_graph_path, class: "button purple" %>
       <%= link_to 'Other Graphs', root_path, class: "button pink" %>
     </div>
+
+    <%= render "shared/code_snippet", graph: "pie" %>
 
   </article>
 </section>

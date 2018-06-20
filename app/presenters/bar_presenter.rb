@@ -25,7 +25,7 @@ class BarPresenter
   end
 
   def scores
-    [@score1, @score2]
+    [score1, score2]
   end
 
   def percentage(score)

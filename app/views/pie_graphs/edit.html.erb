@@ -6,7 +6,7 @@
 
     <div class="page__form">
       <div class="pie_graph">
-
+        <%= PiePresenter.new(self, @pie_graph.score1_was, @pie_graph.score2_was, @pie_graph.score3_was, 180).render %>
       </div>
       <%= render 'form', pie_graph: @pie_graph %>
     </div>
