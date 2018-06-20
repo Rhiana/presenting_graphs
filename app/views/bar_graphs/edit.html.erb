@@ -6,8 +6,7 @@
 
     <div class="page__form">
       <div class="bar_graph">
-        <%= BarPresenter.new(self, @bar_graph.score1_was, 200, 90).render %>
-        <%= BarPresenter.new(self, @bar_graph.score2_was, 200, 90).render %>
+        <%= BarPresenter.new(self, @bar_graph.score1_was, @bar_graph.score2_was, 200, 180).render %>
       </div>
       <%= render 'form', bar_graph: @bar_graph %>
     </div>
