@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :pie_graph do
+    score1 1
+    score2 1
+    score3 1
+  end
   factory :gauge_graph do
     score 1
     total 1
@@ -15,8 +20,8 @@ FactoryBot.define do
   end
 
   factory :bar_graph do
-    score 10
-    total 20
+    score1 1
+    score2 1
   end
 
 end

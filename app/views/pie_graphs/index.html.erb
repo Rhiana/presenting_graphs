@@ -1,0 +1,31 @@
+<% content_for :title, " - All pie graphs" %>
+
+<% if notice %>
+  <p id="notice" role="alert"><%= notice %></p>
+<% end %>
+<section class="page">
+  <article class="page__content">
+    <header class="page__header">
+      <h1>Pie Graphs</h1>
+      <p><strong>
+        Here are some small SVG pie graphs where it's splitting a circle by percent
+      </strong></p>
+    </header>
+    <nav class="page__preview">
+      <% @pie_graphs.each do |pie_graph| %>
+        <%= link_to edit_pie_graph_path(pie_graph), class: "preview_link" do %>
+        <div class="pie_graph">
+
+        </div>
+        <span>Update</span>
+        <% end %>
+      <% end %>
+    </nav>
+
+    <div class="page__cta">
+      <%= link_to 'New Pie Graph', new_pie_graph_path, class: "button purple" %>
+      <%= link_to 'Other Graphs', root_path, class: "button pink" %>
+    </div>
+
+  </article>
+</section>

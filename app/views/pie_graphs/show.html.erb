@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score1:</strong>
+  <%= @pie_graph.score1 %>
+</p>
+
+<p>
+  <strong>Score2:</strong>
+  <%= @pie_graph.score2 %>
+</p>
+
+<p>
+  <strong>Score3:</strong>
+  <%= @pie_graph.score3 %>
+</p>
+
+<%= link_to 'Edit', edit_pie_graph_path(@pie_graph) %> |
+<%= link_to 'Back', pie_graphs_path %>

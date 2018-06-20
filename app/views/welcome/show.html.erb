@@ -26,6 +26,12 @@
         </div>
         <span>Gauge Graphs</span>
       <% end %>
+      <%= link_to pie_graphs_path, class: "preview_link" do %>
+        <div class="pie_graph">
+
+        </div>
+        <span>Pie Graphs</span>
+      <% end %>
       <%= link_to line_graphs_path, class: "preview_link" do %>
         <div class="line_graph">
           <%= LinePresenter.new(self, 23, 7, 36, 180).render %>
