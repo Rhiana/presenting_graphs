@@ -5,9 +5,21 @@
     A bar chart showing your Results
   </title>
 
+  <g class="grid x-grid">
+    <%= graph.x_grid_lines %>
+  </g>
+
+  <g class="grid y-grid">
+    <%= graph.y_grid_lines %>
+  </g>
+
+  <g class="labels y-labels">
+    <%= graph.scale_labels %>
+  </g>
+
   <g>
     <%= graph.bars %>
     <%= graph.labels %>
   </g>
-  
+
 </svg>

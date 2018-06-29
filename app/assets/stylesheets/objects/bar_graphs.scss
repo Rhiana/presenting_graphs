@@ -4,11 +4,19 @@
 .bar_graph {
   svg {
     height: 200px;
-    width: 90px;
-    background-color: $white;
+    width: 180px;
   }
   text {
     fill: $white;
     text-anchor: middle;
+  }
+  .grid {
+    stroke: $grey;
+    stroke-width: 1;
+  }
+  .labels.y-labels text {
+    font-size: 10px;
+    text-anchor: middle;
+    fill: $grey;
   }
 }
