@@ -4,9 +4,12 @@
 
 .pie_graph {
   svg {
-    transform: rotate(-90deg);
+  //  transform: rotate(-90deg);
   }
   circle {
     fill: none;
+  }
+  text {
+    text-anchor: middle;
   }
 }

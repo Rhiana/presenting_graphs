@@ -63,6 +63,37 @@ class PiePresenter
     end
   end
 
+  def percent_to_degrees(score)
+    (percentage(score)) * 3.6
+  end
+
+  def text_offset(position)
+    case position
+    when 0
+      percent_to_degrees(scores[position]) / 2.0
+    when 1
+      percent_to_degrees(scores[position]) / 2.0 + percent_to_degrees(scores[0])
+    when 2
+      percent_to_degrees(scores[position]) / 2.0 + percent_to_degrees(scores[1]) + percent_to_degrees(scores[0])
+    end
+  end
+
+  def radians(degrees)
+    degrees * Math::PI / 180
+  end
+
+  def x_co_ord(angle)
+    rad = radians(angle)
+    x   = radius * Math.cos(rad)
+    center + x
+  end
+
+  def y_co_ord(angle)
+    rad = radians(angle)
+    y   = radius * Math.sin(rad)
+    center - y
+  end
+
   # Draws the circle segments
   def circles
     scores.each_with_index.map do |score, index|
@@ -73,6 +104,14 @@ class PiePresenter
                           stroke: ##{color};
                           stroke-width: #{center};
                           stroke-dashoffset: -#{offset(index)};"
+    end.join.html_safe
+  end
+
+  def labels
+    scores.each_with_index.map do |score, index|
+      tag.text  "#{percentage(score).to_i}%",
+                x: x_co_ord(-text_offset(index)),
+                y: y_co_ord(-text_offset(index))
     end.join.html_safe
   end
 
