@@ -34,7 +34,7 @@ class BarPresenter
   end
 
   def fill(score)
-    ((score / total.to_f) * height) - padding[:top]
+    ((score / total.to_f) * height) - padding[:top] - padding[:bottom]
   end
 
   def base
@@ -51,7 +51,7 @@ class BarPresenter
   end
 
   def y_coord(score)
-    height - fill(score)
+    height - fill(score) - padding[:bottom]
   end
 
   def x_text_coord(order)
@@ -59,21 +59,25 @@ class BarPresenter
   end
 
   def y_text_coord(score)
-    y_coord(score) + 25
+    y_coord(score) + 20
   end
 
   # Defines padding around the graph to make room for the labels
   def padding
-    { top: 5.0, right: width, bottom: (height - 5.0), left: 25.0 }
+    { top: 5.0, right: width, bottom: 5.0, left: 25.0 }
+  end
+
+  def bottom_axis
+    height - padding[:bottom]
   end
 
   # Calculates the spacing between the grid lines
   def horizontal_spacing
-    (padding[:right] - padding[:left]) / 2
+    (padding[:right] - padding[:left]) / scores.length
   end
 
   def vertical_spacing
-    (padding[:bottom] - padding[:top]) / (Y_SCALE.length - 1)
+    (bottom_axis - padding[:top]) / (Y_SCALE.length - 1)
   end
 
   def xcord(value)
@@ -109,7 +113,7 @@ class BarPresenter
       tag.line  x1: xcord(index),
                 x2: xcord(index),
                 y1: padding[:top],
-                y2: padding[:bottom]
+                y2: bottom_axis
     end.join.html_safe
   end
 
