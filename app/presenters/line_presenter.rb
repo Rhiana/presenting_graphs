@@ -1,5 +1,4 @@
 class LinePresenter
-  Y_SCALE = [50, 40, 30, 20, 10, 0]
   require 'color-generator'
   attr_reader :score1, :score2, :score3, :size
 
@@ -30,6 +29,24 @@ class LinePresenter
     [@score1, @score2, @score3]
   end
 
+  def create_scale(inc, max)
+    x = [0]
+    y = 0
+    while y < max
+      y = y + inc
+      x.push(y)
+    end
+    return x.reverse
+  end
+
+  def increment
+    scores.max / 5
+  end
+
+  def y_scale
+    create_scale(increment, scores.max)
+  end
+
   # Defines padding around the graph to make room for the labels
   def padding
     { top: 5.0, right: (@size - 5.0), bottom: (@size - 5.0), left: 25.0 }
@@ -37,11 +54,11 @@ class LinePresenter
 
   # Calculates the spacing between the grid lines
   def horizontal_spacing
-    (padding[:right] - padding[:left]) / 2
+    (padding[:right] - padding[:left]) / (scores.length - 1)
   end
 
   def vertical_spacing
-    (padding[:bottom] - padding[:top]) / (Y_SCALE.length - 1)
+    (padding[:bottom] - padding[:top]) / (y_scale.length - 1)
   end
 
   def xcord(value)
@@ -54,7 +71,7 @@ class LinePresenter
 
   # Calculates where the data points should go
   def score_adj
-    vertical_spacing / 10.0
+    vertical_spacing / increment
   end
 
   def score_cord(value)
@@ -72,7 +89,7 @@ class LinePresenter
   end
 
   def y_grid_lines
-    Y_SCALE.each_with_index.map do |scale, index|
+    y_scale.each_with_index.map do |scale, index|
       tag.line  x1: padding[:left],
                 x2: padding[:right],
                 y1: ycord(index),
@@ -82,7 +99,7 @@ class LinePresenter
 
   # Axis labels
   def scale_labels
-    Y_SCALE.each_with_index.map do |scale, index|
+    y_scale.each_with_index.map do |scale, index|
       tag.text scale, x: xcord(-0.2), y: ycord(index) + 5
     end.join.html_safe
   end
