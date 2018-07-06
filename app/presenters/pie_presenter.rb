@@ -30,7 +30,7 @@ class PiePresenter
   end
 
   def total
-    score1 + score2 + score3
+    scores.reduce(0, :+)
   end
 
   def percentage(score)

@@ -48,9 +48,11 @@
         background-color: $light-pink;
         color: $white;
         svg circle,
-        svg text,
         svg line {
           stroke: $white;
+        }
+        svg text {
+          fill: $white;
         }
       }
     }
