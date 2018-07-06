@@ -31,37 +31,25 @@ class LinePresenter
   end
 
   # Defines padding around the graph to make room for the labels
-  def left_border
-    25.0
-  end
-
-  def right_border
-    @size - 5.0
-  end
-
-  def top_border
-    5.0
-  end
-
-  def bottom_border
-    @size - 5.0
+  def padding
+    { top: 5.0, right: (@size - 5.0), bottom: (@size - 5.0), left: 25.0 }
   end
 
   # Calculates the spacing between the grid lines
   def horizontal_spacing
-    (right_border - left_border) / 2
+    (padding[:right] - padding[:left]) / 2
   end
 
   def vertical_spacing
-    (bottom_border - top_border) / (Y_SCALE.length - 1)
+    (padding[:bottom] - padding[:top]) / (Y_SCALE.length - 1)
   end
 
   def xcord(value)
-    left_border + (value * horizontal_spacing)
+    padding[:left] + (value * horizontal_spacing)
   end
 
   def ycord(value)
-    top_border + (value * vertical_spacing)
+    padding[:top] + (value * vertical_spacing)
   end
 
   # Calculates where the data points should go
@@ -70,7 +58,7 @@ class LinePresenter
   end
 
   def score_cord(value)
-    bottom_border - (value * score_adj)
+    padding[:bottom] - (value * score_adj)
   end
 
   # Draws the grid lines
@@ -78,15 +66,15 @@ class LinePresenter
     scores.each_with_index.map do |score, index|
       tag.line  x1: xcord(index),
                 x2: xcord(index),
-                y1: top_border,
-                y2: bottom_border
+                y1: padding[:top],
+                y2: padding[:bottom]
     end.join.html_safe
   end
 
   def y_grid_lines
     Y_SCALE.each_with_index.map do |scale, index|
-      tag.line  x1: left_border,
-                x2: right_border,
+      tag.line  x1: padding[:left],
+                x2: padding[:right],
                 y1: ycord(index),
                 y2: ycord(index)
     end.join.html_safe
@@ -123,8 +111,8 @@ class LinePresenter
   end
 
   def area_under_line
-    bottom_left   = "M#{left_border},#{bottom_border}"
-    bottom_right  = "L#{right_border},#{bottom_border}Z"
+    bottom_left   = "M#{padding[:left]},#{padding[:bottom]}"
+    bottom_right  = "L#{padding[:right]},#{padding[:bottom]}Z"
     points_line   = scores_points("L")
 
     tag.path d: "#{bottom_left} #{points_line} #{bottom_right}",

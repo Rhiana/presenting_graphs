@@ -34,11 +34,11 @@ class BarPresenter
   end
 
   def fill(score)
-    ((score / total.to_f) * height) - top_border
+    ((score / total.to_f) * height) - padding[:top]
   end
 
   def base
-    (width - left_border) / scores.length
+    (width - padding[:left]) / scores.length
   end
 
   def color
@@ -47,7 +47,7 @@ class BarPresenter
   end
 
   def x_coord(order)
-    (base * order) + left_border
+    (base * order) + padding[:left]
   end
 
   def y_coord(score)
@@ -55,7 +55,7 @@ class BarPresenter
   end
 
   def x_text_coord(order)
-    ((base * order) + base / 2.0) + left_border
+    ((base * order) + base / 2.0) + padding[:left]
   end
 
   def y_text_coord(score)
@@ -63,37 +63,25 @@ class BarPresenter
   end
 
   # Defines padding around the graph to make room for the labels
-  def left_border
-    25.0
-  end
-
-  def right_border
-    width
-  end
-
-  def top_border
-    5.0
-  end
-
-  def bottom_border
-    height - 5.0
+  def padding
+    { top: 5.0, right: width, bottom: (height - 5.0), left: 25.0 }
   end
 
   # Calculates the spacing between the grid lines
   def horizontal_spacing
-    (right_border - left_border) / 2
+    (padding[:right] - padding[:left]) / 2
   end
 
   def vertical_spacing
-    (bottom_border - top_border) / (Y_SCALE.length - 1)
+    (padding[:bottom] - padding[:top]) / (Y_SCALE.length - 1)
   end
 
   def xcord(value)
-    left_border + (value * horizontal_spacing)
+    padding[:left] + (value * horizontal_spacing)
   end
 
   def ycord(value)
-    top_border + (value * vertical_spacing)
+    padding[:top] + (value * vertical_spacing)
   end
 
   # Draws the bars
@@ -120,15 +108,15 @@ class BarPresenter
     [1, 2, 3].each_with_index.map do |score, index|
       tag.line  x1: xcord(index),
                 x2: xcord(index),
-                y1: top_border,
-                y2: bottom_border
+                y1: padding[:top],
+                y2: padding[:bottom]
     end.join.html_safe
   end
 
   def y_grid_lines
     Y_SCALE.each_with_index.map do |scale, index|
-      tag.line  x1: left_border,
-                x2: right_border,
+      tag.line  x1: padding[:left],
+                x2: padding[:right],
                 y1: ycord(index),
                 y2: ycord(index)
     end.join.html_safe
