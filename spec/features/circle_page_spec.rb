@@ -3,7 +3,7 @@ RSpec.describe "Circle Page", type: :feature do
 
   it "has the correct title" do
     expect(page.title).
-      to eq("Presenting Graphs - All circle graphs")
+      to eq("SVG graphs on Rails - All circle graphs")
   end
 
   it "has a link to create a new graph" do

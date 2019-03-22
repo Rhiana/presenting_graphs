@@ -3,7 +3,7 @@ RSpec.describe "Landing Page", type: :feature do
 
   it "has the correct title" do
     expect(page.title).
-      to eq("Presenting Graphs")
+      to eq("SVG graphs on Rails")
   end
 
   it "has a link to the code" do

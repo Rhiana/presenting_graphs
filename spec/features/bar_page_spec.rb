@@ -3,7 +3,7 @@ RSpec.describe "Bar Page", type: :feature do
 
   it "has the correct title" do
     expect(page.title).
-      to eq("Presenting Graphs - All bar graphs")
+      to eq("SVG graphs on Rails - All bar graphs")
   end
 
   it "has a link to create a new graph" do
