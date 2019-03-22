@@ -3,6 +3,7 @@ class LineGraph < ApplicationRecord
 
   validates :scores, presence: true
   validates :maximum, presence: true, numericality: { only_integer: true }
+  validate :score_value_range
 
   # Overrides the default method and turns the string into an array
   def scores=(value)
@@ -10,5 +11,15 @@ class LineGraph < ApplicationRecord
       value = value.split(/[, ]+/).reject(&:blank?)
     end
     super
+  end
+
+  def score_value_range
+    scores.each do |score|
+      if score > maximum
+        errors.add(:scores, "Each score must be smaller or equal to the maximum score")
+      elsif score < 0
+        errors.add(:scores, "Each score must be larger or equal to 0")
+      end
+    end
   end
 end
