@@ -6,7 +6,7 @@
 
     <div class="page__form">
       <div class="line_graph">
-        <%= LinePresenter.new(self, @line_graph.score1_was, @line_graph.score2_was, @line_graph.score3_was, 200).render %>
+        <%= LinePresenter.new(self, @line_graph.scores_was, @line_graph.maximum_was, 200).render %>
       </div>
       <%= render 'form', line_graph: @line_graph %>
     </div>

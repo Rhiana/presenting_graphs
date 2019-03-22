@@ -1,12 +1,11 @@
 class LinePresenter
   require 'color-generator'
-  attr_reader :score1, :score2, :score3, :size
+  attr_reader :scores, :maximum, :size
 
-  def initialize(view, score1, score2, score3, size)
+  def initialize(view, scores, maximum, size)
     @view     = view
-    @score1   = score1
-    @score2   = score2
-    @score3   = score3
+    @scores   = scores
+    @maximum  = maximum
     @size     = size
   end
 
@@ -25,10 +24,6 @@ class LinePresenter
     @view.tag
   end
 
-  def scores
-    [@score1, @score2, @score3]
-  end
-
   def create_scale(inc, max)
     x = [0]
     y = 0
@@ -40,11 +35,11 @@ class LinePresenter
   end
 
   def increment
-    scores.max / 5
+    maximum / 5
   end
 
   def y_scale
-    create_scale(increment, scores.max)
+    create_scale(increment, maximum)
   end
 
   # Defines padding around the graph to make room for the labels

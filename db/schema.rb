@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_022752) do
+ActiveRecord::Schema.define(version: 2019_03_22_045008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,10 @@ ActiveRecord::Schema.define(version: 2019_03_22_022752) do
   end
 
   create_table "line_graphs", force: :cascade do |t|
-    t.integer "score1"
-    t.integer "score2"
-    t.integer "score3"
+    t.integer "maximum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "scores", default: [], array: true
   end
 
   create_table "pie_graphs", force: :cascade do |t|

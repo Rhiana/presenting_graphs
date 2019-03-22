@@ -69,6 +69,6 @@ class LineGraphsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_graph_params
-      params.require(:line_graph).permit(:score1, :score2, :score3)
+      params.require(:line_graph).permit(:maximum, :scores, scores: [])
     end
 end
