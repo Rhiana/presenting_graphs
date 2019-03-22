@@ -28,8 +28,8 @@ class CircleGraphsController < ApplicationController
 
     respond_to do |format|
       if @circle_graph.save
-        format.html { redirect_to circle_graphs_url, notice: 'Circle graph was successfully created.' }
-        format.json { render :index, status: :created, location: @circle_graph }
+        format.html { redirect_to edit_circle_graph_path(@circle_graph), notice: "Circle graph was successfully created." }
+        format.json { render :edit, status: :created, location: @circle_graph }
       else
         format.html { render :new }
         format.json { render json: @circle_graph.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class CircleGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @circle_graph.update(circle_graph_params)
-        format.html { redirect_to circle_graphs_url, notice: 'Circle graph was successfully updated.' }
-        format.json { render :index, status: :ok, location: @circle_graph }
+        format.html { redirect_to edit_circle_graph_path(@circle_graph), notice: "Circle graph was successfully updated." }
+        format.json { render :edit, status: :ok, location: @circle_graph }
       else
         format.html { render :edit }
         format.json { render json: @circle_graph.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class CircleGraphsController < ApplicationController
   def destroy
     @circle_graph.destroy
     respond_to do |format|
-      format.html { redirect_to circle_graphs_url, notice: 'Circle graph was successfully destroyed.' }
+      format.html { redirect_to circle_graphs_url, notice: "Circle graph was successfully destroyed." }
       format.json { head :no_content }
     end
   end

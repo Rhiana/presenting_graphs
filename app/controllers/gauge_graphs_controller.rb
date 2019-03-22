@@ -28,8 +28,8 @@ class GaugeGraphsController < ApplicationController
 
     respond_to do |format|
       if @gauge_graph.save
-        format.html { redirect_to gauge_graphs_url, notice: 'Gauge graph was successfully created.' }
-        format.json { render :index, status: :created, location: @gauge_graph }
+        format.html { redirect_to edit_gauge_graph_path(@gauge_graph), notice: 'Gauge graph was successfully created.' }
+        format.json { render :edit, status: :created, location: @gauge_graph }
       else
         format.html { render :new }
         format.json { render json: @gauge_graph.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class GaugeGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @gauge_graph.update(gauge_graph_params)
-        format.html { redirect_to gauge_graphs_url, notice: 'Gauge graph was successfully updated.' }
-        format.json { render :index, status: :ok, location: @gauge_graph }
+        format.html { redirect_to edit_gauge_graph_path(@gauge_graph), notice: 'Gauge graph was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @gauge_graph }
       else
         format.html { render :edit }
         format.json { render json: @gauge_graph.errors, status: :unprocessable_entity }

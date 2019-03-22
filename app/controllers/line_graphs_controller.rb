@@ -28,8 +28,8 @@ class LineGraphsController < ApplicationController
 
     respond_to do |format|
       if @line_graph.save
-        format.html { redirect_to line_graphs_url, notice: 'Line graph was successfully created.' }
-        format.json { render :index, status: :created, location: @line_graph }
+        format.html { redirect_to edit_line_graph_path(@line_graph), notice: 'Line graph was successfully created.' }
+        format.json { render :edit, status: :created, location: @line_graph }
       else
         format.html { render :new }
         format.json { render json: @line_graph.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class LineGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @line_graph.update(line_graph_params)
-        format.html { redirect_to line_graphs_url, notice: 'Line graph was successfully updated.' }
-        format.json { render :index, status: :ok, location: @line_graph }
+        format.html { redirect_to edit_line_graph_path(@line_graph), notice: 'Line graph was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @line_graph }
       else
         format.html { render :edit }
         format.json { render json: @line_graph.errors, status: :unprocessable_entity }

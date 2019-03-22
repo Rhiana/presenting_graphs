@@ -28,8 +28,8 @@ class BarGraphsController < ApplicationController
 
     respond_to do |format|
       if @bar_graph.save
-        format.html { redirect_to bar_graphs_url, notice: 'Bar graph was successfully created.' }
-        format.json { render :index, status: :created, location: @bar_graph }
+        format.html { redirect_to edit_bar_graph_path(@bar_graph), notice: 'Bar graph was successfully created.' }
+        format.json { render :edit, status: :created, location: @bar_graph }
       else
         format.html { render :new }
         format.json { render json: @bar_graph.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class BarGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @bar_graph.update(bar_graph_params)
-        format.html { redirect_to bar_graphs_url, notice: 'Bar graph was successfully updated.' }
-        format.json { render :index, status: :ok, location: @bar_graph }
+        format.html { redirect_to edit_bar_graph_path(@bar_graph), notice: 'Bar graph was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @bar_graph }
       else
         format.html { render :edit }
         format.json { render json: @bar_graph.errors, status: :unprocessable_entity }

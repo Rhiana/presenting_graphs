@@ -28,8 +28,8 @@ class PieGraphsController < ApplicationController
 
     respond_to do |format|
       if @pie_graph.save
-        format.html { redirect_to pie_graphs_url, notice: 'Pie graph was successfully created.' }
-        format.json { render :index, status: :created, location: @pie_graph }
+        format.html { redirect_to edit_pie_graph_path(@pie_graph), notice: 'Pie graph was successfully created.' }
+        format.json { render :edit, status: :created, location: @pie_graph }
       else
         format.html { render :new }
         format.json { render json: @pie_graph.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class PieGraphsController < ApplicationController
   def update
     respond_to do |format|
       if @pie_graph.update(pie_graph_params)
-        format.html { redirect_to pie_graphs_url, notice: 'Pie graph was successfully updated.' }
-        format.json { render :index, status: :ok, location: @pie_graph }
+        format.html { redirect_to edit_pie_graph_path(@pie_graph), notice: 'Pie graph was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @pie_graph }
       else
         format.html { render :edit }
         format.json { render json: @pie_graph.errors, status: :unprocessable_entity }
