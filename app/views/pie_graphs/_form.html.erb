@@ -13,17 +13,33 @@
 
   <div class="field">
     <%= form.label :score1 %>
-    <%= form.number_field :score1, placeholder: "Enter a score" %>
+    <%= form.number_field :score1,
+          placeholder: "Enter a score",
+          autofocus: true,
+          aria: { "described-by": "score1-error" } %>
+    <p class="error" id="score1-error">
+      <%= pie_graph.errors[:score1].first %>
+    </p>
   </div>
 
   <div class="field">
     <%= form.label :score2 %>
-    <%= form.number_field :score2, placeholder: "Enter a score" %>
+    <%= form.number_field :score2,
+          placeholder: "Enter a score",
+          aria: { "described-by": "score2-error" } %>
+    <p class="error" id="score2-error">
+      <%= pie_graph.errors[:score2].first %>
+    </p>
   </div>
 
   <div class="field">
     <%= form.label :score3 %>
-    <%= form.number_field :score3, placeholder: "Enter a score" %>
+    <%= form.number_field :score3,
+          placeholder: "Enter a score",
+          aria: { "described-by": "score3-error" } %>
+    <p class="error" id="score3-error">
+      <%= pie_graph.errors[:score3].first %>
+    </p>
   </div>
 
   <div class="actions">

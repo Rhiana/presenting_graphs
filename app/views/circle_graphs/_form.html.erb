@@ -13,12 +13,23 @@
 
   <div class="field">
     <%= form.label :score %>
-    <%= form.number_field :score, placeholder: "Enter a score" %>
+    <%= form.number_field :score,
+          placeholder: "Enter a score",
+          autofocus: true,
+          aria: { "described-by": "score-error" } %>
+    <p class="error" id="score-error">
+      <%= circle_graph.errors[:score].first %>
+    </p>
   </div>
 
   <div class="field">
     <%= form.label :total %>
-    <%= form.number_field :total, placeholder: "Enter a total" %>
+    <%= form.number_field :total,
+          placeholder: "Enter a total",
+          aria: { "described-by": "total-error" } %>
+    <p class="error" id="total-error">
+      <%= circle_graph.errors[:total].first %>
+    </p>
   </div>
 
   <div class="actions">

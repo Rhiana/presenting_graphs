@@ -8,12 +8,12 @@
       <div class="circle_graph">
         <%= CirclePresenter.new(self, @circle_graph.score_was, @circle_graph.total_was, 200).render %>
       </div>
-      <%= render 'form', circle_graph: @circle_graph %>
+      <%= render "form", circle_graph: @circle_graph %>
     </div>
 
     <nav class="page__cta">
-      <%= link_to 'Back', circle_graphs_path, class: "button pink" %>
-      <%= link_to 'Destroy', @circle_graph, class: "button blue", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to "Back", circle_graphs_path, class: "button pink" %>
+      <%= link_to "Delete", @circle_graph, class: "button blue", method: :delete, data: { confirm: "Are you sure?" } %>
     </nav>
   </article>
 </section>

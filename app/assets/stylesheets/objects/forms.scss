@@ -31,6 +31,10 @@ input[type="number"] {
   @include mobile {
     grid-template-columns: 1fr;
   }
+  .error {
+    grid-column: 2;
+    color: $pink;
+  }
 }
 
 .actions {
