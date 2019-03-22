@@ -14,6 +14,8 @@ class LineGraph < ApplicationRecord
   end
 
   def score_value_range
+    return unless scores
+    return unless maximum
     scores.each do |score|
       if score > maximum
         errors.add(:scores, "Each score must be smaller or equal to the maximum score")

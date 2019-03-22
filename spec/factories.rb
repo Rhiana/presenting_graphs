@@ -9,9 +9,8 @@ FactoryBot.define do
     total { 1 }
   end
   factory :line_graph do
-    score1 { 1 }
-    score2 { 1 }
-    score3 { 1 }
+    scores  { [1, 1] }
+    maximum { 1 }
   end
 
   factory :circle_graph do
@@ -20,8 +19,8 @@ FactoryBot.define do
   end
 
   factory :bar_graph do
-    score1 { 1 }
-    score2 { 1 }
+    scores  { [1, 1] }
+    maximum { 1 }
   end
 
 end

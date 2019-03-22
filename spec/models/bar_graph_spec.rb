@@ -6,14 +6,13 @@ RSpec.describe BarGraph, type: :model do
       build(:bar_graph)
     end
 
-    it "has two scores" do
-      is_expected.to validate_presence_of(:score1)
-      is_expected.to validate_presence_of(:score2)
+    it "has a scores array and maximum" do
+      is_expected.to validate_presence_of(:scores)
+      is_expected.to validate_presence_of(:maximum)
     end
 
-    it "has two scores which are numbers" do
-      should validate_numericality_of(:score1)
-      should validate_numericality_of(:score2)
+    it "has a maximum which is a number" do
+      should validate_numericality_of(:maximum)
     end
   end
 end

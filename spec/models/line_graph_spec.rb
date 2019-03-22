@@ -6,16 +6,13 @@ RSpec.describe LineGraph, type: :model do
       build(:line_graph)
     end
 
-    it "has three scores" do
-      is_expected.to validate_presence_of(:score1)
-      is_expected.to validate_presence_of(:score2)
-      is_expected.to validate_presence_of(:score3)
+    it "has a scores array and maximum" do
+      is_expected.to validate_presence_of(:scores)
+      is_expected.to validate_presence_of(:maximum)
     end
 
-    it "has three scores which are numbers" do
-      should validate_numericality_of(:score1)
-      should validate_numericality_of(:score2)
-      should validate_numericality_of(:score3)
+    it "has a maximum which is a number" do
+      should validate_numericality_of(:maximum)
     end
   end
 end
