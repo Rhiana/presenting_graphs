@@ -10,7 +10,7 @@
     <nav class="page__preview">
       <%= link_to bar_graphs_path, class: "preview_link" do %>
         <div class="bar_graph">
-          <%= BarPresenter.new(self, 21, 8, 200, 180).render %>
+          <%= BarPresenter.new(self, [21, 8], 40, 200, 180).render %>
         </div>
         <span>Bar Graphs</span>
       <% end %>

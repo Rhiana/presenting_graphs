@@ -1,11 +1,11 @@
 class BarPresenter
   require 'color-generator'
-  attr_reader :score1, :score2, :height, :width
+  attr_reader :scores, :maximum, :height, :width
 
-  def initialize(view, score1, score2, height, width)
+  def initialize(view, scores, maximum, height, width)
     @view     = view
-    @score1   = score1
-    @score2   = score2
+    @scores   = scores
+    @maximum  = maximum
     @height   = height
     @width    = width
   end
@@ -34,21 +34,18 @@ class BarPresenter
     create_scale(20, 100)
   end
 
-  def scores
-    [score1, score2]
-  end
-
-  def total
-    scores.reduce(0, :+)
+  def x_scale
+    number_of_lines = scores.length + 1
+    (1 .. number_of_lines)
   end
 
   def percentage(score)
-    (score / total.to_f) * 100
+    (score / maximum.to_f) * 100
   end
 
   def fill_height(score)
     margins     = padding[:top] + padding[:bottom]
-    rect_height = (score / total.to_f) * (height - margins)
+    rect_height = (score / maximum.to_f) * (height - margins)
   end
 
   def base
@@ -123,7 +120,7 @@ class BarPresenter
 
   # Draws the grid lines
   def x_grid_lines
-    [1, 2, 3].each_with_index.map do |score, index|
+    x_scale.each_with_index.map do |score, index|
       tag.line  x1: xcord(index),
                 x2: xcord(index),
                 y1: padding[:top],

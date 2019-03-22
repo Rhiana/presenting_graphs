@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :score1 %>
-    <%= form.number_field :score1,
-          placeholder: "Enter a score",
+    <%= form.label :scores %>
+    <%= form.text_field :scores,
+          placeholder: "x, y",
           autofocus: true,
-          aria: { "described-by": "score1-error" } %>
-    <p class="error" id="score1-error">
-      <%= bar_graph.errors[:score1].first %>
+          aria: { "described-by": "scores-error" } %>
+    <p class="error" id="scores-error">
+      <%= bar_graph.errors[:scores].first %>
     </p>
   </div>
 
   <div class="field">
-    <%= form.label :score2 %>
-    <%= form.number_field :score2,
-          placeholder: "Enter a score",
-          aria: { "described-by": "score2-error" } %>
-    <p class="error" id="score2-error">
-      <%= bar_graph.errors[:score2].first %>
+    <%= form.label :maximum %>
+    <%= form.number_field :maximum,
+          placeholder: "Enter the max score",
+          aria: { "described-by": "maximum-error" } %>
+    <p class="error" id="maximum-error">
+      <%= bar_graph.errors[:maximum].first %>
     </p>
   </div>
 
