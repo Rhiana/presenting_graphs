@@ -140,7 +140,7 @@ class BarPresenter
   # Axis labels
   def scale_labels
     y_scale.each_with_index.map do |scale, index|
-      tag.text scale, x: xcord(-0.2), y: ycord(index) + 5
+      tag.text scale, x: (padding[:left] / 2.0), y: ycord(index) + 5
     end.join.html_safe
   end
 
