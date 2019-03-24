@@ -49,7 +49,11 @@ class LinePresenter
 
   # Calculates the spacing between the grid lines
   def horizontal_spacing
-    (padding[:right] - padding[:left]) / (scores.length - 1)
+    if scores.length > 1
+      (padding[:right] - padding[:left]) / (scores.length - 1)
+    else
+      padding[:right]
+    end
   end
 
   def vertical_spacing
