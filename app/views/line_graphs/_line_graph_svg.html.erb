@@ -17,6 +17,7 @@
     <%= graph.scale_labels %>
   </g>
 
+<% if graph.scores.length > 1 %>
   <g class="surfaces">
     <%= graph.area_under_line %>
   </g>
@@ -24,6 +25,7 @@
   <g class="points_line">
     <%= graph.data_line %>
   </g>
+<% end %>
 
   <g class="points" data-setname="Scores">
     <%= graph.data_points %>
