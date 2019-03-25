@@ -69,6 +69,6 @@ class PieGraphsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pie_graph_params
-      params.require(:pie_graph).permit(:score1, :score2, :score3)
+      params.require(:pie_graph).permit(:scores, scores: [])
     end
 end

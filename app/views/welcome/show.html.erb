@@ -28,7 +28,7 @@
       <% end %>
       <%= link_to pie_graphs_path, class: "preview_link" do %>
         <div class="pie_graph">
-          <%= PiePresenter.new(self, 25, 66, 11, 180).render %>
+          <%= PiePresenter.new(self, [25, 66, 11], 180).render %>
         </div>
         <span>Pie Graphs</span>
       <% end %>

@@ -1,12 +1,10 @@
 class PiePresenter
   require 'color-generator'
-  attr_reader :score1, :score2, :score3, :size
+  attr_reader :scores, :size
 
-  def initialize(view, score1, score2, score3, size)
+  def initialize(view, scores, size)
     @view     = view
-    @score1   = score1
-    @score2   = score2
-    @score3   = score3
+    @scores   = scores
     @size     = size
   end
 
@@ -23,10 +21,6 @@ class PiePresenter
   def color
     generator = ColorGenerator.new saturation: 0.5, value: 1.0
     generator.create_hex
-  end
-
-  def scores
-    [score1, score2, score3]
   end
 
   def total

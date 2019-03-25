@@ -1,5 +1,28 @@
 class PieGraph < ApplicationRecord
   self.table_name = "pie_graphs"
 
-  validates :score1, :score2, :score3, presence: true, numericality: { only_integer: true }
+  validates :scores, presence: true
+  validate :score_values
+
+  # Overrides the default method and turns the string into an array
+  def scores=(value)
+    if value.is_a? String
+      value = value.split(/[, ]+/).reject(&:blank?)
+    end
+    super
+  end
+
+  def score_values
+    return unless scores
+    if scores.length > 3
+      errors.add(:scores, "Can only draw up to three scores")
+    end
+
+    scores.each do |score|
+      if score < 0
+        errors.add(:scores, "Each score must be larger or equal to 0")
+      end
+    end
+  end
+
 end
