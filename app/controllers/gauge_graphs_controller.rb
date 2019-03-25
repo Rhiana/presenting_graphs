@@ -10,6 +10,7 @@ class GaugeGraphsController < ApplicationController
   # GET /gauge_graphs/1
   # GET /gauge_graphs/1.json
   def show
+    redirect_to gauge_graphs_url
   end
 
   # GET /gauge_graphs/new

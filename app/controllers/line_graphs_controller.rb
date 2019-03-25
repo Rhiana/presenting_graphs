@@ -10,6 +10,7 @@ class LineGraphsController < ApplicationController
   # GET /line_graphs/1
   # GET /line_graphs/1.json
   def show
+    redirect_to line_graphs_url
   end
 
   # GET /line_graphs/new

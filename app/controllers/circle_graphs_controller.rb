@@ -10,6 +10,7 @@ class CircleGraphsController < ApplicationController
   # GET /circle_graphs/1
   # GET /circle_graphs/1.json
   def show
+    redirect_to circle_graphs_url
   end
 
   # GET /circle_graphs/new

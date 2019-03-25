@@ -10,6 +10,7 @@ class PieGraphsController < ApplicationController
   # GET /pie_graphs/1
   # GET /pie_graphs/1.json
   def show
+    redirect_to pie_graphs_url
   end
 
   # GET /pie_graphs/new

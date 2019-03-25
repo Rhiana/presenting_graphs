@@ -10,6 +10,7 @@ class BarGraphsController < ApplicationController
   # GET /bar_graphs/1
   # GET /bar_graphs/1.json
   def show
+    redirect_to bar_graphs_url
   end
 
   # GET /bar_graphs/new
