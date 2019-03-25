@@ -6,10 +6,8 @@ RSpec.describe PieGraph, type: :model do
       build(:pie_graph)
     end
 
-    it "has three scores" do
-      is_expected.to validate_presence_of(:score1)
-      is_expected.to validate_presence_of(:score2)
-      is_expected.to validate_presence_of(:score3)
+    it "has one scores field" do
+      is_expected.to validate_presence_of(:scores)
     end
   end
 end
