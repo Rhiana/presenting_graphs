@@ -31,6 +31,10 @@ class PiePresenter
     (score / total.to_f) * 100
   end
 
+  def full_circle
+    scores.length == 1
+  end
+
   def center
     size / 2.0
   end
@@ -104,7 +108,7 @@ class PiePresenter
   def labels
     scores.each_with_index.map do |score, index|
       tag.text  "#{percentage(score).to_i}%",
-                x: x_co_ord(-text_offset(index)),
+                x: full_circle ? y_co_ord(-text_offset(index)) : x_co_ord(-text_offset(index)),
                 y: y_co_ord(-text_offset(index))
     end.join.html_safe
   end
