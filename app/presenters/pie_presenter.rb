@@ -66,14 +66,17 @@ class PiePresenter
   end
 
   def text_offset(position)
-    case position
-    when 0
-      percent_to_degrees(scores[position]) / 2.0
-    when 1
-      percent_to_degrees(scores[position]) / 2.0 + percent_to_degrees(scores[0])
-    when 2
-      percent_to_degrees(scores[position]) / 2.0 + percent_to_degrees(scores[1]) + percent_to_degrees(scores[0])
+    position_offset = 0
+    (0 .. position).each do | p |
+      if p == position
+        new_offset = percent_to_degrees(scores[p]) / 2.0
+      else
+        new_offset = percent_to_degrees(scores[p])
+      end
+      position_offset += new_offset
     end
+
+    return position_offset
   end
 
   def radians(degrees)

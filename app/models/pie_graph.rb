@@ -14,10 +14,6 @@ class PieGraph < ApplicationRecord
 
   def score_values
     return unless scores
-    if scores.length > 3
-      errors.add(:scores, "Can only draw up to three scores")
-    end
-
     scores.each do |score|
       if score < 0
         errors.add(:scores, "Each score must be larger or equal to 0")
