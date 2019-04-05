@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'svg_data_plotter_gem', '~> 0.0.1'
+
 gem 'color-generator'
 
 gem 'rb-readline'
