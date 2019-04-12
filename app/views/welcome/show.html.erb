@@ -16,7 +16,7 @@
       <% end %>
       <%= link_to circle_graphs_path, class: "preview_link" do %>
         <div class="circle_graph">
-          <%= CirclePresenter.new(self, 27, 100, 200).render %>
+          <%= render "circle_graphs/circle_graph_svg", graph: @circle %>
         </div>
         <span>Circle Graphs</span>
       <% end %>

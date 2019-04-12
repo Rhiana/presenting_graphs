@@ -17,7 +17,9 @@
     <% @circle_graphs.each do |circle_graph| %>
       <%= link_to edit_circle_graph_path(circle_graph), class: "preview_link" do %>
         <div class="circle_graph">
-          <%= CirclePresenter.new(self, circle_graph.score, circle_graph.total, 180).render %>
+          <% @circle = SvgDataPlotterGem::Circle.new({score: circle_graph.score, total: circle_graph.total, size: 180}) %>
+
+          <%= render "circle_graphs/circle_graph_svg", graph: @circle %>
         </div>
         <span>Update</span>
       <% end %>

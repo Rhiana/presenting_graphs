@@ -6,7 +6,9 @@
 
     <div class="page__form">
       <div class="circle_graph">
-        <%= CirclePresenter.new(self, @circle_graph.score_was, @circle_graph.total_was, 200).render %>
+        <% @circle = SvgDataPlotterGem::Circle.new({score: @circle_graph.score_was, total: @circle_graph.total_was, size: 200}) %>
+
+        <%= render "circle_graphs/circle_graph_svg", graph: @circle %>
       </div>
       <%= render "form", circle_graph: @circle_graph %>
     </div>
