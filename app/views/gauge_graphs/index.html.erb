@@ -16,7 +16,9 @@
     <% @gauge_graphs.each do |gauge_graph| %>
       <%= link_to edit_gauge_graph_path(gauge_graph), class: "preview_link" do %>
         <div class="gauge_graph">
-          <%= GaugePresenter.new(self, gauge_graph.score, gauge_graph.total, 180).render %>
+          <% @gauge = SvgDataPlotterGem::Gauge.new({score: gauge_graph.score, total: gauge_graph.total, size: 180}) %>
+
+          <%= render "gauge_graphs/gauge_graph_svg", graph: @gauge %>
         </div>
         <span>Update</span>
       <% end %>

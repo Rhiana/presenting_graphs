@@ -6,7 +6,9 @@
 
     <div class="page__form">
       <div class="gauge_graph">
-        <%= GaugePresenter.new(self, @gauge_graph.score_was, @gauge_graph.total_was, 180).render %>
+        <% @gauge = SvgDataPlotterGem::Gauge.new({score: @gauge_graph.score_was, total: @gauge_graph.total_was, size: 180}) %>
+
+        <%= render "gauge_graphs/gauge_graph_svg", graph: @gauge %>
       </div>
       <%= render 'form', gauge_graph: @gauge_graph %>
     </div>
