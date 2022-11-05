@@ -3,9 +3,9 @@
 This is a demo website for collecting various SVG graphs built with ruby
 
 * Ruby version
-  * 2.5.1
+  * 3.1.2
 * Rails
-  * 5.2.0
+  * 7.0.4
 
 * Set up
 ```
